@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font-family: "Open Sans", sans-serif; }
+
+/*for clearfixing*/
+.cf:before,
+.cf:after {
+  content: "";
+  display: block; }
+
+.cf:after {
+  clear: both; }
+
+.cf {
+  zoom: 1;
+  /* for old ie */ }
+
+.fifty-50 {
+  float: left;
+  width: 50%;
+  padding: .5em; }
+  .fifty-50 h2 {
+    text-align: center; }
+
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-transform: uppercase; }
+
+/* Accordion Styles */
+.accordion {
+  width: 100%;
+  margin: 0 auto; }
+
+/* Button Styles */
+.accordion-btn {
+  background-color: #000;
+  border-bottom: 1px solid #fff;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  padding: 1.5em 2em;
+  width: 100%;
+  text-align: left;
+  border: none;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s; }
+
+.accordion-btn:after {
+  content: '+';
+  font-size: 1em;
+  color: #fff;
+  float: right;
+  margin-left: 5px; }
+
+/* Active and Hover Button Styles */
+.accordion-btn.active,
+.accordion-btn:hover {
+  background-color: #555; }
+
+.accordion-btn.active:after {
+  content: "-"; }
+
+/* Panel Styles */
+.panel {
+  background-color: #ddd;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  opacity: 0; }
+
+.panel p {
+  font-size: 1em;
+  padding: 0.5em 3em; }
+
+/* Show Panel onclick */
+.panel.show {
+  display: block;
+  opacity: 1;
+  max-height: 3000px; }
+
+/* Inner Accordion Style */
+.inner-accord {
+  background-color: #9353be;
+  font-size: 1em;
+  padding: 1.5em 3em; }
+
+.panel.inner:nth-child(4n) {
+  background-color: #a465cf;
+  color: #fff; }
+
+.inner-accord:nth-child(4n+1) {
+  background-color: #ddd;
+  color: #9353be; }
+  .inner-accord:nth-child(4n+1):after {
+    color: #9353be; }
+  .inner-accord:nth-child(4n+1):hover {
+    background-color: #ddd; }
+
+.inner-accord.active:nth-child(4n+1) {
+  background-color: #ddd;
+  color: #a465cf; }
+
+.accordion-btn:after:nth-child(4n+1) {
+  content: '+';
+  font-size: 1em;
+  color: #a465cf;
+  float: right;
+  margin-left: 5px; }
+
+.accordion-btn.active:after {
+  content: "-"; }
+
+.inner.panel:nth-child(4n+1) {
+  background-color: #ddd;
+  color: #9353be; }
+
+.inner-accord.active,
+.inner-accord:hover {
+  background-color: #a465cf; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zY3NzL3N0eWxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsaUVBQVk7QUFHWjtFQUNDLCtCQUFzQjtVQUF0Qix1QkFBc0IsRUFDdEI7O0FBRUQ7RUFDQyxxQ0FQbUMsRUFRbkM7O0FBRUQsbUJBQW1CO0FBQ25COztFQUVFLFlBQVU7RUFDVixlQUFhLEVBQ2Q7O0FBQ0Q7RUFDSSxZQUFVLEVBQ2I7O0FBQ0Q7RUFDSSxRQUFNO0VBQUcsZ0JBQWdCLEVBQzVCOztBQUVEO0VBQ0MsWUFBVztFQUNYLFdBQVU7RUFDVixjQUFhLEVBSWI7RUFQRDtJQUtFLG1CQUFrQixFQUNsQjs7QUFHRjtFQUNFLGtCQUFpQjtFQUNqQixlQUFjO0VBQ2QsMEJBQXlCLEVBQzFCOztBQUVELHNCQUFzQjtBQUN0QjtFQUNJLFlBQVc7RUFDWCxlQUFjLEVBQ2pCOztBQUVELG1CQUFtQjtBQUNuQjtFQUNJLHVCQUFzQjtFQUN0Qiw4QkFBNkI7RUFDN0IsZUFBYztFQUNkLDBCQUF5QjtFQUN6QixZQUFXO0VBQ1gsZ0JBQWU7RUFDZixtQkFBa0I7RUFDbEIsWUFBVztFQUNYLGlCQUFnQjtFQUNoQixhQUFZO0VBQ1osa0NBQXlCO1VBQXpCLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLGFBQVk7RUFDWixlQUFjO0VBQ2QsWUFBVztFQUNYLGFBQVk7RUFDWixpQkFBZ0IsRUFDbkI7O0FBRUQsb0NBQW9DO0FBQ3BDOztFQUVJLHVCQUFzQixFQUN6Qjs7QUFFRDtFQUNJLGFBQVksRUFDZjs7QUFFRCxrQkFBa0I7QUFDbEI7RUFDSSx1QkFBc0I7RUFDdEIsY0FBYTtFQUNiLGlCQUFnQjtFQUNoQixrQ0FBeUI7VUFBekIsMEJBQXlCO0VBQ3pCLFdBQVUsRUFDYjs7QUFFRDtFQUNJLGVBQWM7RUFDZCxtQkFBa0IsRUFDckI7O0FBRUQsd0JBQXdCO0FBQ3hCO0VBQ0ksZUFBYztFQUNkLFdBQVU7RUFDVixtQkFBa0IsRUFDckI7O0FBRUQsMkJBQTJCO0FBQzNCO0VBQ0ksMEJBQXlCO0VBQ3pCLGVBQWM7RUFDZCxtQkFBa0IsRUFDckI7O0FBRUQ7RUFDRSwwQkFBeUI7RUFDekIsWUFBVyxFQUNaOztBQUVEO0VBQ0ksdUJBQXNCO0VBQ3RCLGVBQWMsRUFPakI7RUFURDtJQUlNLGVBQWMsRUFDZjtFQUxMO0lBT00sdUJBQXNCLEVBQ3ZCOztBQUdMO0VBQ0ksdUJBQXNCO0VBQ3RCLGVBQWMsRUFDakI7O0FBRUQ7RUFDSSxhQUFZO0VBQ1osZUFBYztFQUNkLGVBQWM7RUFDZCxhQUFZO0VBQ1osaUJBQWdCLEVBQ25COztBQUVEO0VBQ0ksYUFBWSxFQUNmOztBQUVEO0VBQ0ksdUJBQXNCO0VBQ3RCLGVBQWMsRUFDakI7O0FBRUQ7O0VBRUksMEJBQXlCLEVBQzVCIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */

@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="dist/css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				// Accordion Active & Panel Show
+			    $(".accordion-btn").on('click', function(){
+			        if ($(this).hasClass('active')) {
+			            $(this).removeClass('active');
+			            $(this).next().toggleClass('show');
+			        } else {
+			            $('.accordion-btn.inner-accord.active').removeClass('active');
+			            $(this).toggleClass('active');
+			            $('.inner').removeClass('show');
+			            $(this).next().toggleClass('show');
+			        }
+			    });
+			});
+		</script>
+	</head>
+	<body>
+		<div class="faq-container cf">
+			<div class="fifty-50">
+				<h2>Single Accordion</h2>
+				<div class="accordion">
+					<div class="accordion-btn">Title 1</div>
+					<div class="panel">
+						<p>Lorem Khaled Ipsum is a major key to success. Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail. The key to more success is to have a lot of pillows. Find peace, life is like a water fall, you’ve gotta flow. You see the hedges, how I got it shaped up? It’s important to shape up your hedges, it’s like getting a haircut, stay fresh. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile.</p>
+					</div>
+					<div class="accordion-btn">Title 2</div>
+					<div class="panel">
+						<p>Lorem Khaled Ipsum is a major key to success. Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail. The key to more success is to have a lot of pillows. Find peace, life is like a water fall, you’ve gotta flow. You see the hedges, how I got it shaped up? It’s important to shape up your hedges, it’s like getting a haircut, stay fresh. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile.</p>
+					</div>
+					<div class="accordion-btn">Title 3</div>
+					<div class="panel">
+						<p>Lorem Khaled Ipsum is a major key to success. Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail. The key to more success is to have a lot of pillows. Find peace, life is like a water fall, you’ve gotta flow. You see the hedges, how I got it shaped up? It’s important to shape up your hedges, it’s like getting a haircut, stay fresh. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile.</p>
+					</div>
+					<div class="accordion-btn">Title 4</div>
+					<div class="panel">
+						<p>Lorem Khaled Ipsum is a major key to success. Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail. The key to more success is to have a lot of pillows. Find peace, life is like a water fall, you’ve gotta flow. You see the hedges, how I got it shaped up? It’s important to shape up your hedges, it’s like getting a haircut, stay fresh. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile.</p>
+					</div>
+				</div>
+			</div>
+			<div class="fifty-50">
+				<h2>Nested Accordion</h2>
+				<div class="accordion">
+					<div class="accordion-btn">Title 1</div>
+					<div class="panel">
+						<button class="accordion-btn inner-accord">Inner Title 1</button>
+						<div class="panel inner">
+							<p>We the best. Surround yourself with angels, positive energy, beautiful people, beautiful souls, clean heart, angel. Fan luv. Surround yourself with angels. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile. Bless up. Every chance I get, I water the plants, Lion! Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. You should never complain, complaining is a weak emotion, you got life, we breathing, we blessed.</p>
+						</div>
+						<button class="accordion-btn inner-accord">Inner Title 2</button>
+						<div class="panel inner">
+							<p>We the best. Surround yourself with angels, positive energy, beautiful people, beautiful souls, clean heart, angel. Fan luv. Surround yourself with angels. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile. Bless up. Every chance I get, I water the plants, Lion! Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. You should never complain, complaining is a weak emotion, you got life, we breathing, we blessed.</p>
+						</div>
+						<button class="accordion-btn inner-accord">Inner Title 3</button>
+						<div class="panel inner">
+							<p>We the best. Surround yourself with angels, positive energy, beautiful people, beautiful souls, clean heart, angel. Fan luv. Surround yourself with angels. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile. Bless up. Every chance I get, I water the plants, Lion! Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. You should never complain, complaining is a weak emotion, you got life, we breathing, we blessed.</p>
+						</div>
+						<button class="accordion-btn inner-accord">Inner Title 4</button>
+						<div class="panel inner">
+							<p>We the best. Surround yourself with angels, positive energy, beautiful people, beautiful souls, clean heart, angel. Fan luv. Surround yourself with angels. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile. Bless up. Every chance I get, I water the plants, Lion! Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. You should never complain, complaining is a weak emotion, you got life, we breathing, we blessed.</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

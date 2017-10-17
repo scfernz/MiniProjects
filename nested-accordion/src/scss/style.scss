@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$font-stack: 'Open Sans', sans-serif;
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-stack;
+}
+
+/*for clearfixing*/
+.cf:before,
+.cf:after{
+  content:"";
+  display:block;
+}
+.cf:after {
+    clear:both;
+}
+.cf {
+    zoom:1; /* for old ie */
+}
+
+.fifty-50 {
+	float: left;
+	width: 50%;
+	padding: .5em;
+	h2 {
+		text-align: center;
+	}
+}
+
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+/* Accordion Styles */
+.accordion {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Button Styles */
+.accordion-btn {
+    background-color: #000;
+    border-bottom: 1px solid #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    padding: 1.5em 2em;
+    width: 100%;
+    text-align: left;
+    border: none;
+    transition-duration: 0.3s;
+}
+
+.accordion-btn:after {
+    content: '+';
+    font-size: 1em;
+    color: #fff;
+    float: right;
+    margin-left: 5px;
+}
+
+/* Active and Hover Button Styles */
+.accordion-btn.active,
+.accordion-btn:hover {
+    background-color: #555;
+}
+
+.accordion-btn.active:after {
+    content: "-";
+}
+
+/* Panel Styles */
+.panel {
+    background-color: #ddd;
+    max-height: 0;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    opacity: 0;
+}
+
+.panel p {
+    font-size: 1em;
+    padding: 0.5em 3em;
+}
+
+/* Show Panel onclick */
+.panel.show {
+    display: block;
+    opacity: 1;
+    max-height: 3000px;
+}
+
+/* Inner Accordion Style */
+.inner-accord {
+    background-color: #9353be;
+    font-size: 1em;
+    padding: 1.5em 3em;
+}
+
+.panel.inner:nth-child(4n) {
+  background-color: #a465cf;
+  color: #fff;
+}
+
+.inner-accord:nth-child(4n+1) {
+    background-color: #ddd;
+    color: #9353be;
+    &:after {
+      color: #9353be;
+    }
+    &:hover {
+      background-color: #ddd;
+    }
+}
+
+.inner-accord.active:nth-child(4n+1) {
+    background-color: #ddd;
+    color: #a465cf;
+}
+
+.accordion-btn:after:nth-child(4n+1) {
+    content: '+';
+    font-size: 1em;
+    color: #a465cf;
+    float: right;
+    margin-left: 5px;
+}
+
+.accordion-btn.active:after {
+    content: "-";
+}
+
+.inner.panel:nth-child(4n+1) {
+    background-color: #ddd;
+    color: #9353be;
+}
+
+.inner-accord.active,
+.inner-accord:hover {
+    background-color: #a465cf;
+}
