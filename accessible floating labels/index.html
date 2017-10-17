@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="dist/css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('input#iqsearch').on('keyup', function() {
+					$(this).addClass('active');
+				});
+				$('input#iqsearch').on('change', function() {
+					if($(this).val().length === 0) {
+						$(this).removeClass('active');
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form id="siq_searchForm" class="siq_searchForm" action="">
+			<div class="input-group">
+				<input id="iqsearch" type="search">
+				<label for="searchiq">Search</label>
+			</div>
+		</form>
+	</body>
+</html>
