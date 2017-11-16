@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$font-stack: 'Open Sans', sans-serif;
+$dark-blue: #2b303e;
+$teal: #30e7be;
+$purple: #7073e8;
+$grey: #777;
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-stack;
+}
+
+/*for clearfixing*/
+.cf:before,
+.cf:after{
+  content:"";
+  display:block;
+}
+.cf:after {
+    clear:both;
+}
+.cf {
+    zoom:1; /* for old ie */
+}
+
+.fifty-50 {
+	float: left;
+	width: 50%;
+	padding: .5em;
+	h2 {
+		text-align: center;
+	}
+}
+
+ .modal {
+        display: none;
+        position: fixed;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgb(0,0,0); // Fallback
+        background-color: rgba(0,0,0,0.6);
+        .pop-up {
+            z-index: 4;
+            position: absolute;
+            background-color: $dark-blue;
+            padding: 16px;
+            width: 90%; /* Could be more or less, depending on screen size */
+            max-width: 540px;
+            border-radius: 5px;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            @media only screen and (min-width: 600px) {
+                padding: 25px;
+            }
+        }
+        .modal-content {
+            padding: 1em;
+            color: #fdfdfd;
+            h2 {
+                font-size: 3em;
+                margin: .5em 0;
+                // margin-bottom: .25em;
+                @media only screen and (min-width: 600px) {
+                    font-size: 2.8em;
+                }
+            }
+            .hl {
+                color: $teal;
+                text-transform: uppercase;
+            }
+            p {
+                font-size: 1em;
+                max-width: 300px;
+                margin: 1em auto;
+                line-height: 1.5;
+                &.sub-text {
+                    font-size: 0.75em;
+                }
+            }
+            text-align: center;
+            @media (max-width: 375px) {
+                br {
+                    display: none;
+                }
+            }
+        }
+        a.close {
+            color: $purple;
+        }
+        .close:hover,
+        .close:focus {
+            text-decoration: none;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        form {
+            position: relative;
+            display: block;
+        }
+
+        form#newsletter .input-group {
+            display: block;
+            position: relative;
+            input:focus + label {
+                    top: -8px;
+                    left: .5em;
+                    background-color: #fdfdfd;
+                    font-size: 12px;
+                    opacity: 1;
+                }
+                input.active + label {
+                    top: -8px;
+                    left: .5em;
+                    background-color: #fdfdfd;
+                    font-size: 12px;
+                    opacity: 1;
+                }
+        }
+        form#newsletter .input-group label {
+            position: absolute;
+            top: 5px;
+            transition-duration: .25s;
+            padding: 0 .35em;
+            color: $teal;
+        }
+        input {
+            font-size: 14px;
+            display: inline-block;
+            width: 240px;
+            border-radius: 0;
+            margin: 0 1% 0 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: .75em;
+            padding: .5em;
+            transition: border-color 150ms ease;
+            &:focus {
+                border-color: $teal;
+                box-shadow: inset 0 1px 3px rgba(0,0,0,0.06), 0 0 5px rgba(0,115,127,0.7);
+                outline: none;
+            }
+        }
+    }

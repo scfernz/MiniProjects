@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Masonry Gallery with Magnific Pop Up</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+
+    <script>
+    	$(document).ready(function(){
+    	    	var $grid = $('.tile-container').masonry({
+    	    		itemSelector: '.tile'
+    	    	});
+            $grid.imagesLoaded().progress( function() {
+              $grid.masonry('layout');
+            });
+            $('.tile-container').magnificPopup({
+                delegate: 'a',
+                type: 'image'
+            })
+    	});
+	</script>
+    <style>
+         html {
+          box-sizing: border-box;
+        }
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+        body {
+            font-family: 'Open Sans', 'Arial', 'Helvetica', 'sans-serif';
+        }
+        p {
+            font-size: 16px;
+        }
+        .tile-container  {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .tile-container .tile {
+            width: 100%;
+            padding: 8px;
+        }
+        .tile-container .tile img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media only screen and (min-width: 550px) {
+            .tile-container .tile {
+                width: 50%;
+            }
+        }
+        @media only screen and (min-width: 900px) {
+            .tile-container .tile {
+                width: 33.33%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tile-container">
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+       <a class="tile" href="https://source.unsplash.com/random/1200x1200"><img src="https://source.unsplash.com/random/1200x1200" /></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$font-stack: 'Open Sans', sans-serif;
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-stack;
+}
+
+/*for clearfixing*/
+.cf:before,
+.cf:after{
+  content:"";
+  display:block;
+}
+.cf:after {
+    clear:both;
+}
+.cf {
+    zoom:1; /* for old ie */
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.fifty-50 {
+	float: left;
+	width: 50%;
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    nav {
+        ul {
+            list-style: none;
+            li {
+                display: block;
+                float: left;
+                margin: 3em;
+            }
+        }
+    }
+    button.mobile-menu {
+      border: 0;
+      background: red;
+      height: 32px;
+      width: 32px;
+      .hamburger {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+      }
+    }
+}
+

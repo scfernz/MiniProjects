@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="dist/css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+			   // Cookie Helper Function
+		       var Cookie = {
+		            Create: function (name, value, days) {
+		                var expires = "";
+
+		                if (days) {
+		                    var date = new Date();
+		                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+		                    expires = "; expires=" + date.toGMTString();
+		                }
+
+		                document.cookie = name + "=" + value + expires + "; path=/";
+		            },
+		            Read: function (name) {
+		                var nameEQ = name + "=";
+		                var ca = document.cookie.split(";");
+
+		                for (var i = 0; i < ca.length; i++) {
+		                    var c = ca[i];
+		                    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+		                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+		                }
+		                return null;
+		            },
+		            Erase: function (name) {
+		                Cookie.create(name, "", -1);
+		            }
+		        };
+
+				// If no cookie is set, show popup
+		        if (Cookie.Read('closedPopUp') !== 'true') {
+		            $('.modal').show();
+		        }
+
+				// Close Popup on close or when clicking out of modal
+		        $('.modal, .modal .close').on('click', function() {
+		            $('.modal').hide();
+		            Cookie.Create('closedPopUp', 'true', 1)
+		        });
+
+				// Don't close out when clicking on modal content
+		        $('.modal .modal-content').on('click', function(e) {
+		            e.stopPropagation();
+		        });
+
+		        // Close modal and hide for 7 days if form submitted
+		        $('form#newsletter').on('submit', function() {
+					e.preventDefault();
+					$('.modal').hide();
+					Cookie.Create('closedPopUp', 'true', 7);
+		        });
+
+		        // Floating label
+		        $('form#newsletter input').on('keyup', function() {
+					$(this).addClass('active');
+				});
+				$('form#newsletter input').on('change', function() {
+					if($(this).val().length === 0) {
+						$(this).removeClass('active');
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="modal">
+			<div class="pop-up">
+	            <div class="modal-content">
+	            	<div class="hl">Enter your E-mail and get</div>
+	                <h2>10% OFF</h2>
+	                <form id="newsletter">
+	                	<div class="input-group">
+		                	<label for="email">E-mail</label>
+		                	<input type="text" name="email">
+		                	<input class="btn" type="submit">
+	                	</div>
+	                </form>
+		            <a class="close">No thanks, I don't want to get discounts.</a>
+	                <p class="sub-text">Sign up now to be the first to know <br />about exclusive deals, promotions, <br/>and product updates!</p>
+	            </div>
+			</div>
+        </div>
+	</body>
+</html>
